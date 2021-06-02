@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Set Questions - Quiz Master</title>
+
+	<!--CSS-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/setQuestions.css">
+	<link rel="stylesheet" href="assets/css/setQuestions.responsive.css">
+
+	<!--JS-->
+	<script defer src="assets/js/jquery.min.js"></script>
+	<script defer src="assets/js/bootstrap.bundle.min.js"></script>
+	<script defer src="assets//js/setQuestions.js"></script>
+	<script defer src="https://kit.fontawesome.com/de41999cf3.js"></script>
+
+	<!--Other Dependencies-->
+	<link rel="apple-touch-icon" href="assets/imgs/favicon.png">
+	<link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/x-icon">
+
+</head>
+<body>
+	<main class="wrapper"><br><br>
+		<div class="col-container container">
+			<h1 class="alert alert-info text-center mb-5">Set Questions - Quiz Master</h1>
+			<div class="row d-flex justify-content-around">
+				<div class="col col-12 col-sm-12 col-md-12 col-lg-4 form-col mb-5">
+					<h3 class="text-center alert alert-success"><i class="fas fa-save"></i> Add Question</h3>
+					<form id="main-form">
+						<input hidden id="qid" class="form-control">
+						<fieldset class="form-group">
+							<label>Q No.</label>
+							<input id="qno" class="form-control">
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Question</label>
+							<textarea id="question" class="form-control" type="text" rows="3"></textarea>
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Option 1</label>
+							<input id="opt1" class="form-control" type="text">
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Option 2</label>
+							<input id="opt2" class="form-control" type="text">
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Option 3</label>
+							<input id="opt3" class="form-control" type="text">
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Option 4</label>
+							<input id="opt4" class="form-control" type="text">
+						</fieldset>
+						<fieldset class="form-group">
+							<label>Correct</label>
+							<select id="correct" class="form-control">
+								<option value="0">Select</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</fieldset>
+						<button class="btn btn-success form-control" type="button" id="addQstn">
+							<i class="fas fa-plus"></i> Add Question
+						</button>
+						<button style="display: none;" class="btn btn-warning form-control" type="button" id="updateQstn">Update Question</button>
+						<div id="msg" class="mt-4"></div>
+					</form>
+				</div>
+				<div class="col col-12 col-sm-12 col-md-12 col-lg-8 mb-5">
+					<h3 class="text-center alert alert-success"><i class="fas fa-table"></i> Questions</h3>
+					<div class="table-container">
+						<table class="table table-bordered main-table table-striped">
+							<thead class="text-white">
+								<tr>
+									<th>Qno</th>
+									<th>Question</th>
+									<th>Answer</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody class="text-white" id="table-body">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- End Row One -->
+
+			<div class="row">
+				<div class="col col-sm-12 col-lg-12 col-xs-12 col-md-12">
+					<h3 class="alert alert-success text-center">Scoreboard</h3>
+					<table class="table score-table text-white">
+						<thead class="table-dark">
+							<tr>
+								<th>Rank</th>
+								<th>Name</th>
+								<th>Score</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody class="score-body">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<!-- Begin Modal-->
+			<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			        </button>
+			      </div>
+			      <div class="modal-body">
+			      	<input hidden type="number" id="deleteQno">
+			        Are you sure?
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" id="close-modal">Close</button>
+			        <button type="button" class="btn btn-danger" id="delQuestion">Delete</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- End Modal-->
+
+		</div>
+	</main>
+</body>
+</html>

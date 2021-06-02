@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz Master</title>
+
+	<!--CSS-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+
+	<!--JS-->
+	<script defer src="assets/js/jquery.min.js"></script>
+	<script defer src="assets/js/bootstrap.bundle.min.js"></script>
+	<script defer src="assets/js/quiz.js"></script>
+
+	<!--Other Dependencies-->
+	<link rel="apple-touch-icon" href="assets/imgs/favicon.png">
+	<link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/x-icon">
+	
+</head>
+<body>
+	<section class="start-page">
+		<div class="info">
+			<h1>Quiz Master</h1>
+			<input type="text" id="playerName" class="player-name" placeholder="Enter Your Name">
+			<div class="invalid"></div>
+			<button id="startBtn" class="btn btn-success">Start The Quiz</button>
+			<button id="scoreboard" class="btn btn-warning text-white">Scoreboard</button>
+			<button id="setQuestions" class="btn btn-primary">Set Questions</button>
+
+			<!-- Login Form -->
+			<div class="form-container login-form">
+		        <form autocomplete="off">
+		        	<fieldset class="form-group">
+		        		<label>Username</label>
+		        		<input type="text" id="username" class="form-control">
+		        	</fieldset>
+		        	<fieldset class="form-group">
+		        		<label>Password</label>
+		        		<input type="password" id="password" class="form-control">
+		        	</fieldset>
+		        	<button class="btn btn-warning form-control" id="login">Login</button>
+		        	<div class="login-error"></div>
+		        </form>
+		    </div>
+		</div>
+		<div class="side-content">
+			<img src="./assets/imgs/dev.svg" alt="" srcset="">
+		</div>
+	</section>
+	<main class="wrapper">
+		<section class="container quiz-section">
+			<hgroup class="d-flex justify-content-between">
+				<header class="main-header">
+					Quiz <span>Master</span>
+				</header>
+				<div class="counter">
+					<span class="currentQ">1</span>&nbsp;of&nbsp;<span class="totalQ">15</span>
+				</div>
+			</hgroup>
+			<div class="question-container">
+				<div id="question-content" class="question-content" qno="">
+					What is my name?
+				</div>
+			</div>
+			<div class="options-container">
+				<div class="row-one">
+					<div class="option" oid="1">
+						<div>1</div>
+						<div id="option-1">Sahil</div>
+					</div>
+					<div class="option" oid="2">
+						<div>2</div>
+						<div id="option-2">Sahil Parray</div>
+					</div>
+				</div>
+				<div class="row-two">
+					<div class="option" oid="3">
+						<div>3</div>
+						<div id="option-3">Sahil Showkat</div>
+					</div>
+					<div class="option" oid="4">
+						<div>4</div>
+						<div id="option-4">All Of The Above</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-row">
+				<div class="score-box">
+					<div>Score</div>
+					<div id="score">0</div>
+				</div>
+				<div class="life-lines">
+					<div class="label">Life Lines</div>
+					<button class="btn btn-success" id="5050">50:50</button>
+					<button class="btn btn-primary" id="skip">Skip</button>
+				</div>
+			</div>
+		</section>
+		<div class="right-modal main-modal">
+			<div class="icon bg-success">
+				<img src="assets/imgs/right.png">
+			</div>
+			<p class="modal-text">Right Answer! <b>+1</b></p>
+			<button class="btn btn-success nextBtn" id="nextBtn">Next Question</button>
+		</div>
+		<div class="wrong-modal main-modal">
+			<div class="icon bg-danger">
+				<img src="assets/imgs/wrong.png">
+			</div>
+			<p class="modal-text">Wrong Answer! <b>-0.5</b></p>
+			<button class="btn btn-danger nextBtn" id="nextBtn">Next Question</button>
+		</div>
+		<div class="credits">
+			<div class="credits-content">
+				Your Score is:&nbsp;<span id="total-score">0</span><br>
+				Correct: <span id="correct">0</span><br>
+				Incorrect: <span id="incorrect">0</span><br><br>
+				<input hidden id="savePlayer">
+				<input hidden id="scoreInput">
+				<div class="credits-btns">
+					<a href="index.html" class="btn btn-info mt-2">Return Home</a>
+					<button id="addScore" class="btn btn-success mt-2">Add To Scoreboard</button>
+				</div>
+				<p>
+					Designed & Developed By:<br> Sahil Parray
+				</p>
+			</div>
+		</div>
+	</main>
+	<footer class="copyrights">
+		Created with &#10084; By: <a href="https://sahilparray.tech">Sahil Parray</a>
+	</footer>
+</body>
+</html>
+<noscript>
+	<h1>Life is too short, enable javascript or go home.</h1>
+</noscript>

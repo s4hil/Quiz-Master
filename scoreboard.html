@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scoreboard - Quiz Master</title>
+
+	<!--CSS-->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/scoreboard.css">
+
+	<!--JS-->
+	<script defer src="assets/js/jquery.min.js"></script>
+	<script defer src="assets/js/scoreboard.js"></script>
+	<script defer src="https://kit.fontawesome.com/de41999cf3.js"></script>
+
+	<!--Other Dependencies-->
+	<link rel="apple-touch-icon" href="assets/imgs/favicon.png">
+	<link rel="shortcut icon" href="assets/imgs/favicon.png" type="image/x-icon">
+
+	<style>
+		tr:nth-child(1){
+			background: #5cb85c;
+		}
+	</style>
+
+</head>
+<body>
+	<main class="wrapper">
+		<section class="container pt-5">
+			<h4 class="alert alert-success text-center"><i class="fas fa-chart-bar"></i> Score Board - Quiz Master</h4>
+			<div class="table-container">
+				<table class="table text-white table-bordered">
+					<thead class="thead-light">
+						<tr>
+							<th>Rank</th>
+							<th>Name</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+					<tbody id="table-body">
+					</tbody>
+				</table>
+			</div>
+		</section>
+		<footer class="copyrights">
+			Created with &#10084; By: <a href="https://sahilparray.tech">Sahil Parray</a>
+		</footer>
+	</main>
+</body>
+</html>
